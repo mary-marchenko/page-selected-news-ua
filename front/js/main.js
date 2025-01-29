@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let darkBtn = document.querySelector('.dark-btn');
-    darkBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-    });
 
     const url = encodeURIComponent(window.location.href);
 
@@ -17,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(".share-linkedin").addEventListener("click", function () {
         window.open(shareLinks.linkedin, "_blank");
     });
-
-
 
 });
 
