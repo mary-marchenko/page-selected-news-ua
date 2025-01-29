@@ -1,0 +1,561 @@
+$blue: #005
+$light-blue: #337
+$grey: #8080AA
+$white: #ffffff
+$white-bg: #F8FAFF
+$light-grey: #EBEEF4
+$dark-theme-dark-grey: #0D1425
+$dark-theme-filter: #151F36
+$dark-theme-bg: #060D1B
+$magenta-link: #FF267E
+
+$font-robotoCondensed-bold: RobotoCondensed-Bold, sans-serif //700
+$font-robotoCondensed-medium: RobotoCondensed-Medium, sans-serif //500
+$font-robotoCondensed-regular: RobotoCondensed-Regular, sans-serif //400
+
+body
+  overscroll-behavior: none
+  -webkit-tap-highlight-color: transparent
+  background: $white-bg
+  img
+    max-width: 100%
+    height: auto
+
+// DARK THEME
+.dark
+  .news-page
+    background: $dark-theme-bg
+    .h1
+      color: $white
+      &::after
+        background: rgba(255, 255, 255, 0.14)
+    .filter
+      color: $white
+      &__item
+        background-color: $dark-theme-filter
+        color: $white
+    .content
+      .topNews
+        &__right
+          background-color: $dark-theme-dark-grey
+          .h2,
+          .newsInfo
+            color: $white
+      .news
+        &__item
+          &-txt
+            background-color: $dark-theme-dark-grey
+            .h3
+              color: $white
+    .newsDate
+      color: $white
+
+// END DARK THEME
+
+.newsItem
+  position: relative
+  width: 100%
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  overscroll-behavior: none
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  background: $white-bg
+  overflow: hidden
+  .main
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    width: 826px
+    position: relative
+    margin-top: 20px
+    margin-bottom: 48px
+  .title
+    width: 100%
+    margin-bottom: 30px
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -10px
+      width: 100%
+      background: rgba(0, 0, 0, 0.14)
+      height: 2px
+      display: block
+  .breadcrumbs
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    &-item
+      font-family: $font-robotoCondensed-regular
+      font-size: 14px
+      color: $grey
+      margin-right: 24px
+      position: relative
+      transition: 0.2s ease
+      &:hover
+        color: $magenta-link
+      &:first-child
+        background: url('../img/logo.png') no-repeat 50% 50%/cover
+        width: 16px
+        height: 16px
+      &::after
+        content: url('../img/arrow.svg')
+        position: absolute
+        left: calc(100% + 8px)
+        bottom: 9px
+        width: 8px
+        height: 8px
+        display: block
+      &:last-child
+        word-wrap: break-word
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 1
+        line-clamp: 1
+        text-overflow: ellipsis
+        overflow: hidden
+        margin-right: 0
+  .details
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .date
+      font-family: $font-robotoCondensed-regular
+      font-size: 12px
+      color: $light-blue
+    .links
+      display: flex
+      align-items: center
+      &__txt
+        font-family: $font-robotoCondensed-medium
+        font-size: 14px
+        color: $light-blue
+        margin-right: 8px
+      &__item
+        background-color: $light-grey
+        display: flex
+        justify-content: center
+        padding: 10.5px 16px 11px
+        white-space: nowrap
+        border-radius: 4px
+        position: relative
+        transition: 0.2s ease
+        &:not(:last-child)
+          margin-right: 8px
+        &:hover
+          background-color: $magenta-link
+          .links__item-txt
+            color: $white
+          path
+            fill: $white
+        &-link
+          position: absolute
+          width: 100%
+          height: 100%
+          left: 0
+          top: 0
+          cursor: pointer
+        &-logo
+          width: 16px
+          height: 16px
+          margin-right: 8px
+        &-txt
+          font-family: $font-robotoCondensed-medium
+          font-size: 14px
+          color: $blue
+  .h1
+    font-family: $font-robotoCondensed-bold
+    font-weight: normal
+    text-transform: uppercase
+    color: $blue
+    text-align: left
+    font-size: 40px
+    max-width: 716px
+    margin: 8px 0
+  .news
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    &__topImg
+      width: 100%
+      height: auto
+      //aspect-ratio: 826/464
+      //overflow: hidden
+      border-radius: 8px
+      margin-bottom: 10px
+      overflow: hidden
+    &__content
+      width: 615px
+      .h2,
+      .h3,
+      .h4
+        font-family: $font-robotoCondensed-bold
+        font-weight: normal
+        text-transform: uppercase
+        color: $blue
+        text-align: left
+        margin-bottom: -8px
+      .h2
+        font-size: 32px
+        margin-top: 16px
+      .h3
+        font-size: 24px
+        margin-top: 32px
+      .h4
+        font-size: 18px
+        margin-top: 32px
+      .text
+        font-family: $font-robotoCondensed-regular
+        font-size: 16px
+        line-height: 26px
+        color: $blue
+        align-self: stretch
+        margin: 14px 0
+      .img
+        width: 100%
+        height: auto
+        margin: 16px 0 16px
+        overflow: hidden
+      .quotation
+        margin-block-start: 0
+        margin-block-end: 0
+        margin-inline-start: 0
+        margin-inline-end: 0
+        width: 100%
+        padding: 48px 53px
+        border-radius: 8px
+        margin: 24px 0 17px
+        background-color: $light-grey
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        &-img
+          width: 29px
+          height: 13px
+          margin-bottom: 24px
+        &-txt
+          font-family: $font-robotoCondensed-medium
+          font-size: 24px
+          line-height: 34px
+          color: $blue
+          text-align: center
+      .unorderedList
+        margin-bottom: 20px
+        &-item
+          list-style-type: none
+          position: relative
+          margin-left: 24px
+          font-family: $font-robotoCondensed-regular
+          font-size: 16px
+          line-height: 26px
+          color: $blue
+          margin-bottom: 8px
+          &::before
+            position: absolute
+            top: 13px
+            left: -24px
+            content: ""
+            width: 13px
+            height: 1px
+            background-color: $magenta-link
+      .orderedList
+        padding-inline-start: 0
+        list-style-position: outside
+        padding-left: 10px
+        margin-left: 6px
+        &-item
+          padding-left: 10px
+          font-family: $font-robotoCondensed-regular
+          font-size: 16px
+          line-height: 26px
+          color: $blue
+          margin-bottom: 8px
+          &::marker
+            font-family: $font-robotoCondensed-bold
+      .link
+        font-family: $font-robotoCondensed-regular
+        color: $magenta-link
+        font-size: 16px
+        line-height: 26.4px
+        text-decoration-line: underline
+        text-decoration-style: solid
+        text-decoration-skip-ink: none
+        text-decoration-thickness: auto
+        text-underline-offset: auto
+        text-underline-position: from-font
+        transition: 0.2s ease
+        &:hover
+          text-decoration-line: none
+  .backLink
+    margin-top: 20px
+    display: flex
+    background-color: $light-grey
+    padding: 10px 16px
+    justify-content: center
+    align-items: center
+    transition: 0.2s ease
+    border-radius: 4px
+    &:hover
+      background-color: $magenta-link
+      .backLink__img
+        path
+          fill: $white
+      .backLink__txt
+        color: $white
+    &__img
+      margin-right: 8px
+      width: 6px
+      height: 16px
+    &__txt
+      font-family: $font-robotoCondensed-bold
+      font-size: 14px
+      color: $blue
+      text-transform: uppercase
+
+
+
+//.h1
+  //  font-family: $font-robotoCondensed-bold
+  //  color: $blue
+  //  font-size: 24px
+  //  text-transform: uppercase
+  //  display: block
+  //  width: 100%
+  //  position: relative
+  //  margin-bottom: 26px
+  //  font-weight: normal
+  //  &::after
+  //    content: ''
+  //    position: absolute
+  //    left: 0
+  //    bottom: -10px
+  //    width: 100%
+  //    background: rgba(0, 0, 0, 0.14)
+  //    height: 2px
+  //    display: block
+  //.filter
+  //  font-family: $font-robotoCondensed-medium
+  //  color: $light-blue
+  //  font-size: 14px
+  //  display: flex
+  //  align-items: center
+  //  margin-bottom: 30px
+  //  &__item
+  //    font-family: $font-robotoCondensed-medium
+  //    font-size: 14px
+  //    color: $light-blue
+  //    background-color: $light-grey
+  //    margin-left: 8px
+  //    padding: 9px 16px 11px
+  //    border-radius: 4px
+  //    transition: 0.2s ease
+  //    cursor: pointer
+  //    white-space: nowrap
+  //    &.active
+  //      color: $white
+  //      background-color: $magenta
+  //    &:hover
+  //      color: $white
+  //      background-color: $magenta
+  //.content
+  //  width: 100%
+  //  .topNews
+  //    border-radius: 8px
+  //    display: flex
+  //    width: 100%
+  //    margin-bottom: 23px
+  //    overflow: hidden
+  //    position: relative
+  //    cursor: pointer
+  //    &__link
+  //      display: block
+  //      position: absolute
+  //      top: 0
+  //      left: 0
+  //      width: 100%
+  //      height: 100%
+  //    &__left
+  //      position: relative
+  //      z-index: 1
+  //      &:after
+  //        content: url('../img/arrow.svg')
+  //        position: absolute
+  //        width: 30px
+  //        height: 20px
+  //        right: 28px
+  //        bottom: 13px
+  //        z-index: 2
+  //      &-img
+  //        width: 434px
+  //        height: 245px
+  //        display: flex
+  //        flex-shrink: 0
+  //        transition: 0.2s ease
+  //        &:before
+  //          content: ''
+  //          position: absolute
+  //          width: 26px
+  //          height: 26px
+  //          right: 18px
+  //          bottom: 10px
+  //          -webkit-transform: skew(30deg)
+  //          -moz-transform: skew(30deg)
+  //          -o-transform: skew(30deg)
+  //          background: $magenta
+  //          display: block
+  //          z-index: 1
+  //          border-radius: 4px
+  //        .topImg
+  //          width: 100%
+  //        img
+  //          width: 100%
+  //          height: 100%
+  //          object-fit: cover
+  //    &__right
+  //      background-color: $light-grey
+  //      padding: 24px 24px 24px 32px
+  //      display: flex
+  //      flex-direction: column
+  //      .h2
+  //        font-family: $font-robotoCondensed-bold
+  //        font-size: 32px
+  //        font-weight: normal
+  //        color: $light-blue
+  //        align-self: stretch
+  //        margin-bottom: 8px
+  //        overflow: hidden
+  //        display: -webkit-box
+  //        -webkit-box-orient: vertical
+  //        -webkit-line-clamp: 2
+  //        line-clamp: 2
+  //        text-overflow: ellipsis
+  //        transition: 0.2s ease
+  //      .newsInfo
+  //        font-family: $font-robotoCondensed-regular
+  //        color: $light-blue
+  //        font-size: 16px
+  //        line-height: 26px
+  //        max-height: 74px
+  //        overflow: hidden
+  //        align-self: stretch
+  //        display: -webkit-box
+  //        -webkit-box-orient: vertical
+  //        -webkit-line-clamp: 3
+  //        line-clamp: 3
+  //        text-overflow: ellipsis
+  //    &:hover
+  //      .topNews__left-img
+  //        position: relative
+  //        &:after
+  //          content: ''
+  //          position: absolute
+  //          width: 100%
+  //          height: 100%
+  //          left: 0
+  //          top: 0
+  //          display: block
+  //          background: rgba(0, 0, 85, 0.20)
+  //      .topNews__right
+  //        .h2
+  //          color: $magenta
+  //  .news
+  //    display: flex
+  //    flex-wrap: wrap
+  //    justify-content: flex-start
+  //    margin-bottom: 38px
+  //    &__item
+  //      display: flex
+  //      flex-direction: column
+  //      margin-right: 23px
+  //      margin-bottom: 23px
+  //      flex: 0 1 calc(33.3% - 15px)
+  //      overflow: hidden
+  //      cursor: pointer
+  //      position: relative
+  //      border-radius: 8px
+  //      &:after
+  //        content: url('../img/arrow.svg')
+  //        position: absolute
+  //        width: 30px
+  //        height: 20px
+  //        right: 28px
+  //        bottom: 96px
+  //        z-index: 2
+  //      &:before
+  //        content: ''
+  //        position: absolute
+  //        width: 26px
+  //        height: 26px
+  //        right: 18px
+  //        bottom: 93px
+  //        -webkit-transform: skew(30deg)
+  //        -moz-transform: skew(30deg)
+  //        -o-transform: skew(30deg)
+  //        background: $magenta
+  //        display: block
+  //        z-index: 1
+  //        border-radius: 4px
+  //      &:nth-child(3n)
+  //        margin-right: 0
+  //      &-link
+  //        display: block
+  //        position: absolute
+  //        top: 0
+  //        left: 0
+  //        width: 100%
+  //        height: 100%
+  //      &-img
+  //        width: 100%
+  //        height: auto
+  //        aspect-ratio: 16 / 9
+  //        overflow: hidden
+  //        transition: 0.2s ease
+  //        img
+  //          width: 100%
+  //          height: 100%
+  //          object-fit: cover
+  //      &-txt
+  //        background-color: $light-grey
+  //        padding: 8px 16px
+  //        .h3
+  //          font-family: $font-robotoCondensed-bold
+  //          color: $light-blue
+  //          font-size: 18px
+  //          font-weight: normal
+  //          align-self: stretch
+  //          overflow: hidden
+  //          word-wrap: break-word
+  //          display: -webkit-box
+  //          -webkit-box-orient: vertical
+  //          -webkit-line-clamp: 2
+  //          line-clamp: 2
+  //          text-overflow: ellipsis
+  //          margin-bottom: 5px
+  //          transition: 0.2s ease
+  //      &:hover
+  //        .news__item-txt
+  //          .h3
+  //            color: $magenta
+  //        .news__item-img
+  //          position: relative
+  //          &:after
+  //            content: ''
+  //            position: absolute
+  //            width: 100%
+  //            height: 100%
+  //            left: 0
+  //            top: 0
+  //            display: block
+  //            background: rgba(0, 0, 85, 0.20)
+  //
+  //.newsDate
+  //  font-family: $font-robotoCondensed-regular
+  //  font-size: 12px
+  //  color: $light-blue
+  //  margin-top: auto
