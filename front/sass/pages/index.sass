@@ -4,14 +4,23 @@ $grey: #8080AA
 $white: #ffffff
 $white-bg: #F8FAFF
 $light-grey: #EBEEF4
-$dark-theme-dark-grey: #0D1425
-$dark-theme-filter: #151F36
+$dark-theme-dark-grey: #151F36
+$dark-theme-breadcrumbs: #A1AAC3
 $dark-theme-bg: #060D1B
 $magenta-link: #FF267E
 
 $font-robotoCondensed-bold: RobotoCondensed-Bold, sans-serif //700
 $font-robotoCondensed-medium: RobotoCondensed-Medium, sans-serif //500
 $font-robotoCondensed-regular: RobotoCondensed-Regular, sans-serif //400
+
+.dark-btn
+  position: absolute
+  right: 0
+  top: 0
+  width: 50px
+  height: 35px
+  cursor: pointer
+  z-index: 10
 
 body
   overscroll-behavior: none
@@ -23,33 +32,54 @@ body
 
 // DARK THEME
 .dark
-  .news-page
+  .newsItem
     background: $dark-theme-bg
     .h1
       color: $white
+    .title
       &::after
         background: rgba(255, 255, 255, 0.14)
-    .filter
-      color: $white
-      &__item
-        background-color: $dark-theme-filter
-        color: $white
-    .content
-      .topNews
-        &__right
-          background-color: $dark-theme-dark-grey
-          .h2,
-          .newsInfo
-            color: $white
-      .news
+    .breadcrumbs
+      &-item
+        color: $dark-theme-breadcrumbs
+    .details
+      .date
+        color: $dark-theme-breadcrumbs
+      .links
+        &__txt
+          color: $dark-theme-breadcrumbs
         &__item
+          background-color: $dark-theme-dark-grey
+          &-logo
+            path
+              fill: $dark-theme-breadcrumbs
           &-txt
-            background-color: $dark-theme-dark-grey
-            .h3
-              color: $white
-    .newsDate
-      color: $white
-
+            color: $dark-theme-breadcrumbs
+    .news
+      &__content
+        .h2,
+        .h3,
+        .h4
+          color: $white
+        .text
+          color: $white
+        .quotation
+          background-color: $dark-theme-dark-grey
+          &-txt
+            color: $white
+        .unorderedList
+          &-item
+            color: $white
+        .orderedList
+          &-item
+            color: $white
+    .backLink
+      background-color: $dark-theme-dark-grey
+      &__img
+        path
+          fill: $dark-theme-breadcrumbs
+      &__txt
+        color: $dark-theme-breadcrumbs
 // END DARK THEME
 
 .newsItem
@@ -293,7 +323,6 @@ body
         &:hover
           text-decoration-line: none
   .backLink
-    margin-top: 20px
     display: flex
     background-color: $light-grey
     padding: 10px 16px
@@ -301,6 +330,7 @@ body
     align-items: center
     transition: 0.2s ease
     border-radius: 4px
+    margin: 20px auto 0
     &:hover
       background-color: $magenta-link
       .backLink__img
@@ -317,245 +347,3 @@ body
       font-size: 14px
       color: $blue
       text-transform: uppercase
-
-
-
-//.h1
-  //  font-family: $font-robotoCondensed-bold
-  //  color: $blue
-  //  font-size: 24px
-  //  text-transform: uppercase
-  //  display: block
-  //  width: 100%
-  //  position: relative
-  //  margin-bottom: 26px
-  //  font-weight: normal
-  //  &::after
-  //    content: ''
-  //    position: absolute
-  //    left: 0
-  //    bottom: -10px
-  //    width: 100%
-  //    background: rgba(0, 0, 0, 0.14)
-  //    height: 2px
-  //    display: block
-  //.filter
-  //  font-family: $font-robotoCondensed-medium
-  //  color: $light-blue
-  //  font-size: 14px
-  //  display: flex
-  //  align-items: center
-  //  margin-bottom: 30px
-  //  &__item
-  //    font-family: $font-robotoCondensed-medium
-  //    font-size: 14px
-  //    color: $light-blue
-  //    background-color: $light-grey
-  //    margin-left: 8px
-  //    padding: 9px 16px 11px
-  //    border-radius: 4px
-  //    transition: 0.2s ease
-  //    cursor: pointer
-  //    white-space: nowrap
-  //    &.active
-  //      color: $white
-  //      background-color: $magenta
-  //    &:hover
-  //      color: $white
-  //      background-color: $magenta
-  //.content
-  //  width: 100%
-  //  .topNews
-  //    border-radius: 8px
-  //    display: flex
-  //    width: 100%
-  //    margin-bottom: 23px
-  //    overflow: hidden
-  //    position: relative
-  //    cursor: pointer
-  //    &__link
-  //      display: block
-  //      position: absolute
-  //      top: 0
-  //      left: 0
-  //      width: 100%
-  //      height: 100%
-  //    &__left
-  //      position: relative
-  //      z-index: 1
-  //      &:after
-  //        content: url('../img/arrow.svg')
-  //        position: absolute
-  //        width: 30px
-  //        height: 20px
-  //        right: 28px
-  //        bottom: 13px
-  //        z-index: 2
-  //      &-img
-  //        width: 434px
-  //        height: 245px
-  //        display: flex
-  //        flex-shrink: 0
-  //        transition: 0.2s ease
-  //        &:before
-  //          content: ''
-  //          position: absolute
-  //          width: 26px
-  //          height: 26px
-  //          right: 18px
-  //          bottom: 10px
-  //          -webkit-transform: skew(30deg)
-  //          -moz-transform: skew(30deg)
-  //          -o-transform: skew(30deg)
-  //          background: $magenta
-  //          display: block
-  //          z-index: 1
-  //          border-radius: 4px
-  //        .topImg
-  //          width: 100%
-  //        img
-  //          width: 100%
-  //          height: 100%
-  //          object-fit: cover
-  //    &__right
-  //      background-color: $light-grey
-  //      padding: 24px 24px 24px 32px
-  //      display: flex
-  //      flex-direction: column
-  //      .h2
-  //        font-family: $font-robotoCondensed-bold
-  //        font-size: 32px
-  //        font-weight: normal
-  //        color: $light-blue
-  //        align-self: stretch
-  //        margin-bottom: 8px
-  //        overflow: hidden
-  //        display: -webkit-box
-  //        -webkit-box-orient: vertical
-  //        -webkit-line-clamp: 2
-  //        line-clamp: 2
-  //        text-overflow: ellipsis
-  //        transition: 0.2s ease
-  //      .newsInfo
-  //        font-family: $font-robotoCondensed-regular
-  //        color: $light-blue
-  //        font-size: 16px
-  //        line-height: 26px
-  //        max-height: 74px
-  //        overflow: hidden
-  //        align-self: stretch
-  //        display: -webkit-box
-  //        -webkit-box-orient: vertical
-  //        -webkit-line-clamp: 3
-  //        line-clamp: 3
-  //        text-overflow: ellipsis
-  //    &:hover
-  //      .topNews__left-img
-  //        position: relative
-  //        &:after
-  //          content: ''
-  //          position: absolute
-  //          width: 100%
-  //          height: 100%
-  //          left: 0
-  //          top: 0
-  //          display: block
-  //          background: rgba(0, 0, 85, 0.20)
-  //      .topNews__right
-  //        .h2
-  //          color: $magenta
-  //  .news
-  //    display: flex
-  //    flex-wrap: wrap
-  //    justify-content: flex-start
-  //    margin-bottom: 38px
-  //    &__item
-  //      display: flex
-  //      flex-direction: column
-  //      margin-right: 23px
-  //      margin-bottom: 23px
-  //      flex: 0 1 calc(33.3% - 15px)
-  //      overflow: hidden
-  //      cursor: pointer
-  //      position: relative
-  //      border-radius: 8px
-  //      &:after
-  //        content: url('../img/arrow.svg')
-  //        position: absolute
-  //        width: 30px
-  //        height: 20px
-  //        right: 28px
-  //        bottom: 96px
-  //        z-index: 2
-  //      &:before
-  //        content: ''
-  //        position: absolute
-  //        width: 26px
-  //        height: 26px
-  //        right: 18px
-  //        bottom: 93px
-  //        -webkit-transform: skew(30deg)
-  //        -moz-transform: skew(30deg)
-  //        -o-transform: skew(30deg)
-  //        background: $magenta
-  //        display: block
-  //        z-index: 1
-  //        border-radius: 4px
-  //      &:nth-child(3n)
-  //        margin-right: 0
-  //      &-link
-  //        display: block
-  //        position: absolute
-  //        top: 0
-  //        left: 0
-  //        width: 100%
-  //        height: 100%
-  //      &-img
-  //        width: 100%
-  //        height: auto
-  //        aspect-ratio: 16 / 9
-  //        overflow: hidden
-  //        transition: 0.2s ease
-  //        img
-  //          width: 100%
-  //          height: 100%
-  //          object-fit: cover
-  //      &-txt
-  //        background-color: $light-grey
-  //        padding: 8px 16px
-  //        .h3
-  //          font-family: $font-robotoCondensed-bold
-  //          color: $light-blue
-  //          font-size: 18px
-  //          font-weight: normal
-  //          align-self: stretch
-  //          overflow: hidden
-  //          word-wrap: break-word
-  //          display: -webkit-box
-  //          -webkit-box-orient: vertical
-  //          -webkit-line-clamp: 2
-  //          line-clamp: 2
-  //          text-overflow: ellipsis
-  //          margin-bottom: 5px
-  //          transition: 0.2s ease
-  //      &:hover
-  //        .news__item-txt
-  //          .h3
-  //            color: $magenta
-  //        .news__item-img
-  //          position: relative
-  //          &:after
-  //            content: ''
-  //            position: absolute
-  //            width: 100%
-  //            height: 100%
-  //            left: 0
-  //            top: 0
-  //            display: block
-  //            background: rgba(0, 0, 85, 0.20)
-  //
-  //.newsDate
-  //  font-family: $font-robotoCondensed-regular
-  //  font-size: 12px
-  //  color: $light-blue
-  //  margin-top: auto
