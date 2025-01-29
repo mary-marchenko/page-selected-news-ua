@@ -15,6 +15,12 @@
             margin-right: 0
           &-txt
             display: none
+    .news
+      &__topImg
+        max-height: 450px
+      &__content
+        .img
+          max-height: 450px
 
 @media screen and (max-width: 500px)
   .newsItem
@@ -49,9 +55,20 @@
       &__topImg
         margin-bottom: 0
         border-radius: 4px
+        max-height: 330px
       &__content
+        .text
+          font-size: 14px
+          line-height: 24px
+        .img
+          max-height: 330px
         .quotation
-          padding: 24px 26px
+          padding: 24px 18px
+          &-img
+            margin-bottom: 17px
+          &-txt
+            font-size: 18px
+            line-height: 24px
     .backLink
       width: 100%
       margin-top: 14px
@@ -67,10 +84,8 @@
         &__item
           padding: 7px 10px
     .news
+      &__topImg
+        max-height: 230px
       &__content
-        .quotation
-          &-img
-            margin-bottom: 17px
-          &-txt
-            font-size: 20px
-            line-height: 30px
+        .img
+          max-height: 230px
