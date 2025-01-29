@@ -3,6 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
     darkBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark');
     });
+
+    const url = encodeURIComponent(window.location.href);
+
+    const shareLinks = {
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+    };
+    document.querySelector(".share-facebook").addEventListener("click", function () {
+        window.open(shareLinks.facebook, "_blank");
+    });
+
+    document.querySelector(".share-linkedin").addEventListener("click", function () {
+        window.open(shareLinks.linkedin, "_blank");
+    });
+
+
+
 });
 
 //copy link
@@ -26,3 +43,4 @@ document.querySelector('.links__item-copy').addEventListener('click', function()
         itemLogo.innerHTML = newSVG;
     }
 });
+
